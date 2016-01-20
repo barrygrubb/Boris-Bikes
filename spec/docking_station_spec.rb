@@ -1,7 +1,5 @@
 require 'docking_station'
 
-describe DockingStation do
- #it { should be_kind_of(Class) }
- #it { should be_a_kind_of(Class) }
- #it { should be_a(Class) }
+RSpec.describe DockingStation do
+  it { should respond_to(:release_bike) }
 end
