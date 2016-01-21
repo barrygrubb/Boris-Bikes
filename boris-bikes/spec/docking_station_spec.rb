@@ -10,21 +10,28 @@ RSpec.describe DockingStation do
     expect(docking.release_bike).to be_a(Bike)
 	end
 
-	bike = Bike.new
+	bikes = Bike.new
 
 	it 'expects bike to respond to working?' do
-		expect(bike.working?).to eq(true)
+		expect(bikes.working?).to eq(true)
 	end
 
   it 'responds to dock' do
-    expect(docking.dock(bike))
+    expect(docking.dock(bikes))
   end
 
   it 'sees a docked bike' do
-    expect(docking.view)
+    expect(docking.bike)
   end
 
     it {is_expected.to respond_to(:dock).with(1).argument }
 
-    it {returns docked_bikes.instance_variable_get(@docked_bikes)}
+  it 'returns docked_bikes' do
+    @bike = docking.dock(bikes)
+    expect(docking.instance_variable_get(:@bike)).to eql(docking.dock(bikes))
+    # print "#{@bike}"
+    # print " -->"
+    # print "#{docking.dock(bikes)}"
+  end
+
 end
