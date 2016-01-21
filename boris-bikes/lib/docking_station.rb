@@ -13,7 +13,16 @@ class DockingStation
   end
 
   def dock(bike)
+    #print "#{@bike.length}"
+
+    raise 'Docking station full' unless @bike.length == 0
     @bike << bike
+
+    # if @bike.length > 0
+    #   raise 'Docking station full'
+    # else
+    #   @bike << bike
+    # end
   end
 
 end
