@@ -39,6 +39,15 @@ describe DockingStation do
       expect{subject.release_bike}.to raise_error('no bikes available')
     end
 
+
+    describe '#dock_bikes' do
+      it 'returns error' do
+        station = DockingStation.new 
+        station.dock(Bike.new)
+      expect{station.dock(bike)}.to raise_error('station is full')
+    end
+    end
+
   # def release_bike
   #   fail 'no bikes available' unless @bike
   #   @bike
