@@ -28,8 +28,10 @@ describe DockingStation do
 
     it {is_expected.to respond_to(:dock).with(1).argument }
 
-    it 'returns an instance variable' do
-    expect(subject.instance_variable_get(:@bike)) == (subject.dock(Bike.new))
+    it 'returns an instance variable of a bike' do
+        station = DockingStation.new 
+        station.dock(Bike.new)
+    expect(station.instance_variable_get(:@bikes)).to be_a(Bike) 
     end
 
     # it do print "#{(docking.bike)}" end
@@ -41,21 +43,14 @@ describe DockingStation do
 
 
     describe '#dock_bikes' do
-      it 'returns error' do
-        station = DockingStation.new 
-        station.dock(Bike.new)
-      expect{station.dock(bike)}.to raise_error('station is full')
-    end
+       it 'returns error' do
+         station = DockingStation.new 
+         station.dock(Bike.new)
+       expect{station.dock(bike)}.to raise_error('station is full')
     end
 
-  # def release_bike
-  #   fail 'no bikes available' unless @bike
-  #   @bike
-  # end
-
-    # it 'if no bikes, do not return a bike' do
-    #   expect(subject.release_bike).to not_be_a(Bike)
-    # end
+    end
+    
     end
 end
 

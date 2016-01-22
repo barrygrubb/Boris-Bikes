@@ -1,15 +1,15 @@
 class DockingStation
 
-  attr_reader :bike
+  attr_reader :bikes
 
   def release_bike
-    fail 'no bikes available' unless @bike
-    @bike
+    fail 'no bikes available' unless @bikes
+    @bikes
   end
 
   def dock(bike)  
-    fail 'station is full' unless @bike == nil
-    @bike = bike
+    fail 'station is full' unless @bikes == nil
+    @bikes = bike
   end
 
 end
