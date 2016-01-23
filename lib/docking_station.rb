@@ -25,7 +25,7 @@ DEFAULT_CAPACITY = 20
 private
 
   def full?
-    ( @working_bikes.count + @broken_bikes.count ) >= DEFAULT_CAPACITY
+    ( @working_bikes.count + @broken_bikes.count ) >= @capacity
   end
 
   def empty?
