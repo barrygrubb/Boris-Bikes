@@ -48,8 +48,25 @@ describe DockingStation do
        expect{subject.dock(bike)}.to raise_error('station is full')
     end
 
+    # it {is_expected.to respond_to(DockingStation.new).with(1).argument}
+
+  #   it 'Responds to an argument' do
+  #   expect(DockingStation).to respond_to(:new).with(1).argument
+  # end
+
+    context 'when a default is specified' do
+        it 'uses that default' do
+          input_capacity = 30  # we are setting at a number NOT = the default number, to test code
+          docking_station = DockingStation.new(input_capacity)
+          expect(docking_station.capacity).to eq(input_capacity)
+        end
     end
 
+    it 'has a default capacity' do
+      expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
+    end
+
+    end
     end
 end
 
