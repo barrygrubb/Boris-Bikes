@@ -26,7 +26,7 @@ describe DockingStation do
 
     # it do print "#{(subject.dock(bike))}" end
 
-    it {is_expected.to respond_to(:dock).with(1).argument }
+    it {is_expected.to respond_to(:dock).with(1).argument } 
 
     it 'returns an instance variable of a bike' do
         station = DockingStation.new 
@@ -66,6 +66,12 @@ describe DockingStation do
       expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
     end
 
+    it 'does not release broken bikes' do
+      bike = Bike.new
+      bike.broken
+      subject.dock(bike)
+      expect{(subject.release_bike)}.to raise_error('no working bike')
+    end
     end
     end
 end

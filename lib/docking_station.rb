@@ -1,3 +1,5 @@
+require './lib/bike.rb'
+
 class DockingStation
 
 DEFAULT_CAPACITY = 20
@@ -11,10 +13,11 @@ DEFAULT_CAPACITY = 20
 
   def release_bike
     fail 'no bikes available' if empty?
+    fail 'no working bike' unless (@bikes.last).working?
     @bikes.pop 
   end
 
-  def dock(bike)  
+  def dock(bike)
     fail 'station is full' if full?
     @bikes << bike
   end
@@ -30,19 +33,3 @@ private
   end
 end
 
-# below code refactored to above:
-  # def full?
-  #   if @bikes.length < 20
-  #     false
-  #   else
-  #     true
-  #   end
-  # end
-
-  # def empty?
-  #   if @bikes.length >= 1
-  #     false
-  #   else
-  #     true
-  #   end
-  # end

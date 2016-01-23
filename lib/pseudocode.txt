@@ -1,0 +1,29 @@
+Option 1
+
+#array_1 = create total array of bikes 
+
+#add bikes to array
+
+#iterate through array of bikes
+
+#array_2 = if bike.working? ==> array of working bikes
+
+#array_3 = if bike.broken? ==> array of broken bikes
+
+
+Option 2: capacity = issue
+
+#if bike.working? ==> array_1 of working bikes
+
+#if not ==> array_2  of broken bikes
+
+
+
+
+
+
+
+
+
+
+
