@@ -4,7 +4,7 @@ describe DockingStation do
 
     it { expect respond_to(:release_bike) }
 
-    # let(:bike) { double :bike } <-- Double creation for 'bike'
+    # let(:bike) { double :bike } # <-- Double creation for 'bike'
 
 	  it 'expects bike to respond to working?' do
       # allow(bike).to receive(:working?).and_return(true) <--- Make 'bike' respond to 'working?' method with 'true'
