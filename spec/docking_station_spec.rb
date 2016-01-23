@@ -21,7 +21,7 @@ describe DockingStation do
     it { expect respond_to(:@bike) }
 
     it 'returns a docked bike' do
-    expect(subject.dock(bike)).to eq bike
+    expect(subject.dock(bike)).to include bike
     end
 
     # it do print "#{(subject.dock(bike))}" end
@@ -31,7 +31,7 @@ describe DockingStation do
     it 'returns an instance variable of a bike' do
         station = DockingStation.new 
         station.dock(Bike.new)
-    expect(station.instance_variable_get(:@bikes)).to be_a(Bike) 
+    expect(station.instance_variable_get(:@bikes)).to include(Bike) 
     end
 
     # it do print "#{(docking.bike)}" end
@@ -44,13 +44,12 @@ describe DockingStation do
 
     describe '#dock_bikes' do
        it 'returns error' do
-         station = DockingStation.new 
-         station.dock(Bike.new)
-       expect{station.dock(bike)}.to raise_error('station is full')
+         20.times {subject.dock(Bike.new)}
+       expect{subject.dock(bike)}.to raise_error('station is full')
     end
 
     end
-    
+
     end
 end
 
