@@ -13,6 +13,4 @@ describe Bike do
 	expect(bike.instance_variable_get(:@working)).to eq false
 	end
 
-end 
-
-
+end

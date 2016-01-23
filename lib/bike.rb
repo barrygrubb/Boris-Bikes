@@ -7,11 +7,11 @@ class Bike
 	end
 
 	def working?
-	  	@working
+	  @working
 	end
 
 	def broken
-	  	@working = false
+	  @working = false
 	end
 
 end

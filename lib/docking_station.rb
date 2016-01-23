@@ -14,7 +14,7 @@ DEFAULT_CAPACITY = 20
 
   def release_bike
     fail 'no bikes available' if empty?
-    @working_bikes.pop 
+    @working_bikes.pop
   end
 
   def dock(bike)
@@ -32,4 +32,3 @@ private
     @working_bikes.count == 0
   end
 end
-
